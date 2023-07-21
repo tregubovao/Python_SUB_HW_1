@@ -11,14 +11,18 @@ c_side = 4
 
 if a_side + b_side > c_side and a_side + c_side > b_side and c_side + b_side > a_side:
     if a_side == b_side == c_side:
-        print(f'Это раВносторонний треугольник')        
-    elif a_side == b_side or b_side == c_side or a_side == c_side:
-        print(f'Это РАВНОБЕДРЕННЫЙ треугольник')
+        print(f'Это раВносторонний треугольник')
     elif (a_side**2 + b_side**2 == c_side**2 
             or a_side**2 + c_side**2 == b_side**2 
             or c_side**2 + b_side**2 == a_side**2):
-        print(f'Это ПРЯМОУГОЛЬНЫЙ треугольник')
+        if a_side == b_side or b_side == c_side or a_side == c_side:
+            print(f'Это ПРЯМОУГОЛЬНЫЙ РАВНОБЕДРЕННЫЙ треугольник')
+        else:
+            print(f'Это ПРЯМОУГОЛЬНЫЙ треугольник (разносторонний)')
+    elif a_side == b_side or b_side == c_side or a_side == c_side:
+        print(f'Это РАВНОБЕДРЕННЫЙ треугольник')
+    
     else:
-        print(f'Это раЗносторонний треугольник')
+        print(f'Это раЗносторонний треугольник (НЕ прямоугольный)')
 else:
     print(f'Треугольника с такими сторонами НЕ существует')
